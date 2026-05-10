@@ -10,7 +10,7 @@ class Constants:
 
 class OdooConstants:
     ODOO_URL = os.getenv("ODOO_URL")
-    ODD_DB = os.getenv("ODD_DB")
+    ODDO_DB = os.getenv("ODDO_DB")
     ODOO_USERNAME = os.getenv("ODOO_USERNAME")
     ODOO_PASSWORD = os.getenv("ODOO_PASSWORD")
     WORK_FROM_OFFICE_DAYS = ["monday", "tuesday", "wednesday"]
@@ -24,6 +24,6 @@ class OdooConstants:
         "long": 77.0477487
     }
     HOME_COORDINATES = {
-        "lat": 28.6809867,
-        "long": 76.9321791
+        "lat": float(os.getenv("HOME_COORDINATES_LAT", "28.4018581")),
+        "long": float(os.getenv("HOME_COORDINATES_LONG", "77.0477487"))
     }

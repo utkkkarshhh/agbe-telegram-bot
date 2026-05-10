@@ -20,7 +20,7 @@ class OdooManager:
         payload = {
             "jsonrpc": "2.0",
             "params": {
-                "db": OdooConstants.ODD_DB,
+                "db": OdooConstants.ODDO_DB,
                 "login": OdooConstants.ODOO_USERNAME,
                 "password": OdooConstants.ODOO_PASSWORD,
             },
