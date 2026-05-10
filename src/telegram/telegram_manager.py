@@ -1,8 +1,7 @@
 from src.constants.constants import Constants
-from src.telegram.handlers.attendance_handler import AttendanceHandler
-from src.telegram.handlers.help_handler import HelpHandler
+from src.telegram.handlers import HelpHandler, AttendanceHandler
 from src.utils import logger
-from telegram import BotCommand
+from telegram import Bot, BotCommand
 from telegram.ext import Application, ApplicationBuilder
 
 
@@ -38,6 +37,11 @@ class TelegramManager:
         self.app.add_handler(
             help_handler.get_handler()
         )
+
+    @staticmethod
+    async def send_message(chat_id: str, message: str):
+        bot = Bot(token=Constants.TELEGRAM_BOT_TOKEN)
+        await bot.send_message(chat_id=chat_id,text=message)
 
     def run(self):
         logger.info("Telegram Polling Started Successfully")

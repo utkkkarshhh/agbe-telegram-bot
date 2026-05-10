@@ -15,8 +15,9 @@ class OdooConstants:
     ODOO_PASSWORD = os.getenv("ODOO_PASSWORD")
     WORK_FROM_OFFICE_DAYS = ["monday", "tuesday", "wednesday"]
     WORK_FROM_HOME_DAYS = ["thursday", "friday"]
-    OFF_DAYS = ["saturday", "sunday"]
-    IS_AUTO_ATTENDANCE_ENABLED = os.getenv("IS_AUTO_ATTENDANCE_ENABLED", False)
+    # OFF_DAYS = ["saturday", "sunday"]
+    OFF_DAYS = []
+    IS_AUTO_ATTENDANCE_ENABLED = os.getenv("IS_AUTO_ATTENDANCE_ENABLED", "False").lower() == "true"
     AUTO_CHECK_IN_TIME = os.getenv("AUTO_CHECK_IN_TIME", "9:00")
     AUTO_CHECK_OUT_TIME = os.getenv("AUTO_CHECK_OUT_TIME", "18:00")
     AGBE_COORDINATES = {
